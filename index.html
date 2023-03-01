@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/vueNotebook/vite.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite + Vue</title>
-  <script type="module" crossorigin src="/vueNotebook/assets/index.0504de89.js"></script>
-  <link rel="stylesheet" href="/vueNotebook/assets/index.bdebdd17.css">
+  <script type="module" crossorigin src="/vueNotebook/assets/index-79388d6f.js"></script>
+  <link rel="stylesheet" href="/vueNotebook/assets/index-bdebdd17.css">
 </head>
 <body>
 <div id="topBanner">
@@ -25,8 +25,12 @@
             <div class="options" v-for="(item, index) in firstLevelMenu" v-bind:id="item">{{ index }}</div>
             <div class="optionAll" v-for="(Firstitem, Findex) in secondLevelMenu" v-bind:id="'opa'+(Findex+1)">
                 <div class="option" v-for="(item, Sindex) in Firstitem" :id = "'op'+secondIndex[Findex][Sindex]">
-                    {{ item instanceof Array ? null : item }}
+                    {{ item instanceof Array ? Sindex : item }}
+                    <div class="tertOptions" v-if="item instanceof Array" id="top1">
+
+                    </div>
                 </div>
+
             </div>
             <!--                <div class="option" id="op1">新建</div>-->
             <!--                <div class="option" id="op2">保存</div>-->
